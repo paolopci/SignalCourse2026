@@ -5,5 +5,7 @@ import { App01 } from './app/section02/app01/app01';
 import { App02 } from './app/section02/app02/app02';
 import { App03 } from './app/section03/app03/app03';
 import { App04 } from './app/section03/app04/app04';
+import { App05 } from './app/section03/app05/app05';
+import { App07 } from './app/section03/app07/app07';
 
-bootstrapApplication(App04, appConfig).catch((err) => console.error(err));
+bootstrapApplication(App07, appConfig).catch((err) => console.error(err));
