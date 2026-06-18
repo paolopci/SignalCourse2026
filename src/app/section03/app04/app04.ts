@@ -13,6 +13,7 @@ export class App04 {
   valore = 10;
 
   readonly derived = computed(() => this.firstSignal() * 10);
+  // questo non viene rilevato perchè a cambiare non è un signal
   readonly derived2 = computed(() => this.secondSignal() + this.valore);
 
   updateFirstSignal() {
