@@ -1,5 +1,5 @@
 import { Component, DestroyRef, inject } from '@angular/core';
-import { interval } from 'rxjs';
+import { startCounting } from './util';
 
 @Component({
   selector: 'app-counter',
@@ -10,7 +10,6 @@ import { interval } from 'rxjs';
 export class Counter {
   readonly destroyRef = inject(DestroyRef);
   constructor() {
-    const sub = interval(1000).subscribe(console.log);
-    this.destroyRef.onDestroy(() => sub.unsubscribe());
+    startCounting();
   }
 }

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { Counter } from '../counter/counter';
-
+import { startCounting } from '../counter/util';
 
 @Component({
   selector: 'app-app014',
@@ -10,8 +10,7 @@ import { Counter } from '../counter/counter';
 })
 export class App014 {
   showCounter: boolean = false;
-  //counterValue: number = 0;
-
+  //readonly destroyRef = inject(DestroyRef);
   constructor() {}
 
   toogleCounter() {
