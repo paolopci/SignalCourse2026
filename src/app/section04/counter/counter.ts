@@ -1,4 +1,11 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  inject,
+  Injector,
+  OnInit,
+  runInInjectionContext,
+} from '@angular/core';
 import { startCounting } from './util';
 
 @Component({
@@ -7,9 +14,17 @@ import { startCounting } from './util';
   templateUrl: './counter.html',
   styleUrl: './counter.css',
 })
-export class Counter {
-  readonly destroyRef = inject(DestroyRef);
+export class Counter implements OnInit {
+  private dr = inject(DestroyRef);
+  private injector = inject(Injector);
   constructor() {
-    startCounting();
+    //startCounting();
+  }
+  ngOnInit() {
+    runInInjectionContext(this.injector, () => {
+      startCounting();
+    });
+
+    //startCounting();
   }
 }
