@@ -1,4 +1,4 @@
-import { Component, DestroyRef } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { interval } from 'rxjs';
 
 @Component({
@@ -8,9 +8,9 @@ import { interval } from 'rxjs';
   styleUrl: './counter.css',
 })
 export class Counter {
-
-  constructor(private destroyRef: DestroyRef) {
+  readonly destroyRef = inject(DestroyRef);
+  constructor() {
     const sub = interval(1000).subscribe(console.log);
-    destroyRef.onDestroy(() => sub.unsubscribe());
+    this.destroyRef.onDestroy(() => sub.unsubscribe());
   }
 }
