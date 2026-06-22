@@ -9,5 +9,6 @@ import { App05 } from './app/section03/app05/app05';
 import { App07 } from './app/section03/app07/app07';
 import { App014 } from './app/section04/app01/app01';
 import { App41 } from './app/section04/app41/app41';
+import { App100 } from './app/examples/app100/app100';
 
-bootstrapApplication(App41, appConfig).catch((err) => console.error(err));
+bootstrapApplication(App100, appConfig).catch((err) => console.error(err));
