@@ -1,5 +1,5 @@
-import { Component, effect, signal } from '@angular/core';
-import { Counter41 } from "../counter41/counter41";
+import { Component } from '@angular/core';
+import { Counter41 } from '../counter41/counter41';
 
 @Component({
   selector: 'app-app41',

@@ -1,1 +1,49 @@
-<p>app100 works!</p>
+<main class="page">
+  <h1>Demo Angular input() e output()</h1>
+
+  <section class="toolbar">
+    <button type="button" (click)="decreaseQuantity()">-</button>
+
+    <strong>Quantità padre: {{ selectedQuantity() }}</strong>
+
+    <button type="button" (click)="increaseQuantity()">+</button>
+
+    <button type="button" (click)="toggleHighlight()">Toggle evidenza</button>
+
+    <button type="button" (click)="changeProduct()">Cambia prodotto</button>
+  </section>
+
+  <app-product-card
+    [product]="selectedProduct()"
+    [quantity]="selectedQuantity()"
+    [highlight]="isHighlighted()"
+    [favorite]="isSelectedProductFavorite()"
+    [currency]="'EUR'"
+    (addToCart)="handleAddToCart($event)"
+    (favoriteChanged)="handleFavoriteChanged($event)"
+  >
+  </app-product-card>
+
+  <section class="cart">
+    <h2>Carrello</h2>
+
+    @if (cartRows().length === 0) {
+      <p>Nessun prodotto nel carrello.</p>
+    } @else {
+      <ul>
+        @for (row of cartRows(); track $index) {
+          <li>
+            {{ getProductName(row.productId) }}
+            - quantità {{ row.quantity }} - totale
+            {{ row.total | currency: 'EUR' : 'symbol' : '1.2-2' }}
+          </li>
+        }
+      </ul>
+
+      <p>
+        Totale carrello:
+        <strong>{{ cartTotal() | currency: 'EUR' : 'symbol' : '1.2-2' }}</strong>
+      </p>
+    }
+  </section>
+</main>

@@ -1,1 +1,31 @@
-<p>product-card works!</p>
+<article class="card" [class.highlight]="highlight()">
+  <h2>{{ product().name }}</h2>
+
+  <p>
+    Prezzo Base:
+    <strong>{{ product().price | currency: currency() : 'symbol' : '1.2-2' }}</strong>
+  </p>
+
+  <p>
+    Quantità ricevuta dal padre:
+    <strong>{{ quantity() }}</strong>
+  </p>
+  <p>
+    Prezzo con IVA:
+    <strong>{{ priceWithVat() | currency: currency() : 'symbol' : '1.2-2' }}</strong>
+  </p>
+  <p>
+    Totale:
+    <strong>{{ total() | currency: currency() : 'symbol' : '1.2-2' }}</strong>
+  </p>
+
+  @if (product().available) {
+    <button type="button" (click)="onAddToCart()">Aggiungi al carrello</button>
+  } @else {
+    <button type="button" disabled>Non disponibile</button>
+  }
+
+  <button type="button" (click)="onToggleFavorite()">
+    {{ favorite() ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti' }}
+  </button>
+</article>
