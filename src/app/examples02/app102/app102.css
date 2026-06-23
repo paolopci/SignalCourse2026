@@ -1,0 +1,17 @@
+.page {
+  font-family: Arial, sans-serif;
+  padding: 32px;
+}
+
+.summary {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 320px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}

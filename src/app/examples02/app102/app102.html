@@ -1,1 +1,27 @@
-<p>app102 works!</p>
+<main class="page">
+  <h1>Angular signals - Model Input</h1>
+
+  <app-quantity-selector
+    label="Quantità prodotto"
+    [min]="1"
+    [max]="10"
+    [(quantity)]="cartQuantity"
+  />
+  <section class="summary">
+    <h2>Componente padre</h2>
+    <p>
+      Quantità nel padre:
+      <strong>{{ cartQuantity() }}</strong>
+    </p>
+    <p>
+      Prezzo unitario:
+      <strong>{{ unitPrice() }}</strong>
+    </p>
+    <p>
+      Totale:
+      <strong>{{ totalPrice() }}</strong>
+    </p>
+
+    <button type="button" (click)="resetQuantity()">Reset dal padre</button>
+  </section>
+</main>
