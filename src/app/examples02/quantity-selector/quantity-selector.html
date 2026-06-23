@@ -1,1 +1,16 @@
-<p>quantity-selector works!</p>
+<div class="quantity-box">
+  <label class="label">{{ label() }}</label>
+  <div class="controls">
+    <button type="button" (click)="decrease()" [disabled]="quantity() <= min()">-</button>
+    <input
+      type="number"
+      [value]="quantity()"
+      [min]="min()"
+      [max]="max()"
+      (input)="onManualInput($event)"
+    />
+    <button type="button" (click)="increase()" [disabled]="quantity() >= max()">+</button>
+
+    <small> Valore interno del figlio: {{ quantity() }} </small>
+  </div>
+</div>
