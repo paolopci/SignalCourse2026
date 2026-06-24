@@ -1,0 +1,11 @@
+<main class="container">
+  <h1>viewChild con elemento condizionale</h1>
+
+  <button type="button" (click)="toggleInput()">Mostra/Nascondi input</button>
+
+  @if (showInput()) {
+    <input #conditionalInput placeholder="Input condizionale" />
+  }
+
+  <button type="button" (click)="focusConditionalInput()">Focus input condizionale</button>
+</main>
