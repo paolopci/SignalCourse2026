@@ -1,0 +1,21 @@
+<main class="container">
+  <h1>viewChildren su componenti figli</h1>
+
+  @for (product of products(); track product.id) {
+    <app-product-card [name]="product.name" [price]="product.price" />
+  }
+
+  <hr />
+
+  <button type="button" (click)="resetAllSelections()">Reset selezioni</button>
+
+  <p>
+    Componenti ProductCard trovati:
+    <strong>{{ productCardsCount() }}</strong>
+  </p>
+
+  <p>
+    Prodotti selezionati:
+    <strong>{{ selectedProductsCount() }}</strong>
+  </p>
+</main>

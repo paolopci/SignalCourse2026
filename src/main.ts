@@ -13,5 +13,6 @@ import { App100 } from './app/examples/app100/app100';
 import { App102 } from './app/examples02/app102/app102';
 import { App103 } from './app/examples03/app103/app103';
 import { App104 } from './app/examples04/app104/app104';
+import { App105 } from './app/examples05/app105/app105';
 
-bootstrapApplication(App104, appConfig).catch((err) => console.error(err));
+bootstrapApplication(App105, appConfig).catch((err) => console.error(err));

@@ -1,0 +1,11 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.selected {
+  border-color: black;
+  background-color: #f2f2f2;
+}

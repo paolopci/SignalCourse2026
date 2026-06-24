@@ -1,0 +1,8 @@
+<article class="card" [class.selected]="selected()">
+  <h3>{{ name() }}</h3>
+  <p>Prezzo: {{ price() }} €</p>
+
+  <button type="button" (click)="toggleSelected()">
+    {{ selected() ? 'Deseleziona' : 'Seleziona' }}
+  </button>
+</article>
