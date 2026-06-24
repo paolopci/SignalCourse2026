@@ -1,0 +1,14 @@
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.category-button {
+  margin: 6px;
+  padding: 8px 12px;
+}
+
+hr {
+  margin: 20px 0;
+}

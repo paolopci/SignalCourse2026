@@ -1,0 +1,32 @@
+<main class="container">
+  <h1>Demo viewChildren()</h1>
+
+  <button type="button" (click)="addCategory()">Aggiungi categoria</button>
+
+  <button type="button" (click)="focusFirstCategory()">Focus prima categoria</button>
+
+  <button type="button" (click)="logButtons()">Stampa bottoni in console</button>
+
+  <hr />
+
+  @for (category of categories(); track category.id) {
+    <button
+      #categoryButton
+      type="button"
+      class="category-button"
+      (click)="selectCategory(category.name)"
+    >
+      {{ category.name }}
+    </button>
+  }
+
+  <p>
+    Numero bottoni trovati:
+    <strong>{{ buttonsCount() }}</strong>
+  </p>
+
+  <p>
+    Categoria selezionata:
+    <strong>{{ selectedCategory() }}</strong>
+  </p>
+</main>
