@@ -1,0 +1,34 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.app-hover-card {
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.app-hover-card--hovered {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+button.app-hover-card {
+  font-size: 16px;
+  text-align: left;
+}
