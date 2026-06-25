@@ -1,0 +1,19 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 500px;
+  margin-bottom: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.card-header {
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.card-body {
+  font-size: 14px;
+  line-height: 1.5;
+}
