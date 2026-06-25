@@ -1,0 +1,14 @@
+<div class="tabs">
+  <nav class="tab-header">
+    @for (tab of tabs(); track tab; let index = $index) {
+      <button type="button" [class.active]="selectedIndex() === index" (click)="selectTab(index)">
+        {{ tab.title() }}
+      </button>
+    }
+  </nav>
+
+  <div class="tab-body">
+    <!-- Qui vengono proiettati gli app-tab-item -->
+    <ng-content></ng-content>
+  </div>
+</div>
